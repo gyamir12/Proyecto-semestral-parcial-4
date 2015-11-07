@@ -48,16 +48,16 @@ public class enunciadoB {
             }
             catch (NumberFormatException e) {
                 System.out.println("error, Introduzca solo numeros enteros");
-                e.printStackTrace();}
+                }
             catch (IllegalArgumentException err) {
-                err.printStackTrace();
+
                 System.out.println("error, I no puede ser cero");
             }
 
 
             catch (Exception e) {
                 System.out.println("error, Introduzca valores numericos, para realizar el calculo nuevamente. ");
-                e.printStackTrace();//sirve para ver los errores que tiran
+               ;//sirve para ver los errores que tiran
 
             }
             System.out.println("presione [S] si para continuar o [N] No para cancelar : ");
@@ -69,7 +69,7 @@ public class enunciadoB {
                 rpta = ans.charAt(0);
             }}catch (Exception er) {
             System.out.println(" ");
-            er.printStackTrace();
+
         }
 
     }

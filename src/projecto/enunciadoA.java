@@ -11,7 +11,7 @@ import static java.lang.Math.sqrt;
  * problema a
  * profesor: Miguel Diaz
  */
-public class encuadiadoA {
+public class enunciadoA {
     /* a) crear un programa que sea capaz de determinar si un numero entero
            capturado desde el teclado es un numero: par o impar, si es un número
            primo o no primo, y  que determine si ese número es un número perfecto.
@@ -38,45 +38,64 @@ public class encuadiadoA {
                 InputStreamReader(System.in));
         String temp;
         int b;
+        String ans;
+        char rpta = 's';
+        while (!(rpta =='n' || rpta == 'N')) {
+            try{
         try {
             System.out.println("Introduzca un numero:");
             temp = br.readLine();
             b = Integer.parseInt(temp);
-            System.out.println(letra(b));
-            if (Util.isPrime(b)){
-                System.out.println("El numero " +b+" es Primo ");
+            if (b == 0){
+                System.out.println("El numero Cero es Neutro ");
             }
-            else
-                System.out.println("El numero " +b + " no es Primo ");
+            else{
+            System.out.println(letra(b));
+            if (!(b > 1)){
+                System.out.println("un número primo es un número natural mayor que 1");
+            }
+            else {
+                if (Util.isPrime(b))
+                    System.out.println("El numero " + b + " es Primo ");
+                else
+                    System.out.println("El numero " + b + " no es Primo ");
+            }
             if (perfecto.perfect(b))
                 System.out.println("El numero " +b+" es Perfecto ");
             else
                 System.out.println("El numero " +b+" no es Perfecto ");
-           /* for (int i = 2; i <= 1000; i++) {    // se uso para verificar los numeros primos
+           /* for (int i = 2; i <= 1000; i++) {    // se utilizo para verificar los numeros primos hasta 1000
                 if (Util.isPrime(i))
                     System.out.println("es primo  " +i);
 
             }*/
-        }
+        }}
         catch (Exception e) {
-            System.out.println("Introduzca solo numeros ");
-
+            System.out.println("Introduzca solo numeros enteros");
     }
+                System.out.println("presione cualquier letra para continuar o ,[N] No para finalizar : ");
+                ans = br.readLine();
+                rpta = ans.charAt(0);
+            }catch (Exception e){
+            System.out.println();
+            }
+        }
 }
 }
 class Util {
     public static boolean isPrime(Integer number) {
         try {
-            if (!(number > 0))
+            if (! (number > 0))
                 throw new IllegalArgumentException("(Argumento Inválido): Argumento `number` debe ser mayor a cero.");
-        } catch (IllegalArgumentException error) {
+        }
+        catch (IllegalArgumentException error) {
             error.printStackTrace();
         }
 
         if (number % Math.sqrt(number) == 0)
             return false;
         else {
-            for (int i = 2; i <= sqrt(number); i++) {
+            for (int i = 2; i <= sqrt(number) ; i++) {
                 if (number % i == 0)
                     return false;
             }

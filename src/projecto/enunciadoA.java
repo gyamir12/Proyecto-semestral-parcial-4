@@ -17,7 +17,6 @@ public class enunciadoA {
            primo o no primo, y  que determine si ese número es un número perfecto.
            (valor 10 puntos).
              */
-
     public static boolean esPar (int a){
         if ( a % 2 == 0 )
             return(true);
@@ -32,10 +31,7 @@ public class enunciadoA {
         return ("El numero " +l+ " es Impar");
     }
     public static void main(String[] args){
-
-
-        BufferedReader br = new BufferedReader(new
-                InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String temp;
         int b;
         String ans;

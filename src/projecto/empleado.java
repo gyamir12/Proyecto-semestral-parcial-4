@@ -44,21 +44,31 @@ public class empleado {
         String temp;
         String temp2;
         int x;
+        String ans;
+        char rpta = 's';
+        while (!(rpta =='n' || rpta == 'N')) {
+            try {
+                try {
+                    System.out.print("Introduzca el nombre: ");
+                    temp = br.readLine();
+                    System.out.print("Introduzca el numero de empleado: ");
+                    temp2 = br.readLine();
+                    x = Integer.parseInt(temp2);
+                    emp.leerDatos(temp, x);
+                    emp.desplegarDatos();
+                } catch (NumberFormatException e) {
+                    System.out.println("Introduzca solo numeros enteros para el numero de empleado");
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-
-        try {
-            System.out.print("Introduzca el nombre: ");
-            temp = br.readLine();
-            System.out.print("Introduzca el numero de empleado: ");
-            temp2 = br.readLine();
-            x = Integer.parseInt(temp2);
-            emp.leerDatos(temp,x);
-            emp.desplegarDatos();
+                System.out.println("presione cualquier letra para continuar o ,[N] No para finalizar : ");
+                ans = br.readLine();
+                rpta = ans.charAt(0);
+            } catch (Exception er) {
+                System.out.println()    ;
+            }
         }
-    catch (IOException e) {
-            e.printStackTrace();
-        }
-
 
 
     }
